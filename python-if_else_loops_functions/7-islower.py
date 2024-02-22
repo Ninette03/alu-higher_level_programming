@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 def islower(c):
-    if ord(c) >= 97 and ord(c) <= 122:
-        return True
-    else:
-        reurn False
+    return ord('a') <= ord(c) <= ord('z')
+
+print(islower('a'))  # True
+print(islower('A'))  # False
+print(islower('z'))  # True
+print(islower('Z'))  # False
+print(islower('1'))  # False
