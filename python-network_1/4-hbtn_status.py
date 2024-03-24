@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""
-Python script that fetches an URL with requests package
-"""
+""" Python script that fetches https://alu-intranet.hbtn.io/status """
 import requests
 
-
 if __name__ == "__main__":
-    r = requests.get('https://alu-intranet.hbtn.io/status')
-    t = r.text
-    print('Body response:\n\t- type: {}\n\t- content: {}'.format(type(t), t))
+    url = 'https://alu-intranet.hbtn.io/status'
+    response = requests.get(url)
+    # Check if the request was successful
+    if response.status_code == 200:
+        print('Body response:')
+        print('\t- type: {}'.format(type(response.text)))
+        print('\t- content: {}'.format(response.text))
+    else:
+        print('Error code: {}'.format(response.status_code))
